@@ -25,4 +25,14 @@ public class ContactHelper extends HelperBase {
   public void goToAddNewContact(){
     click(By.linkText("add new"));
   }
+
+  public void selectContact() {
+    click(By.name("selected[]"));
+  }
+
+  public void deleteSelectedContacts() {
+    click(By.cssSelector("div.left:nth-child(8) > input:nth-child(1)"));
+    closeAlertWindow();
+  }
+
 }
