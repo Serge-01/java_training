@@ -35,4 +35,12 @@ public class ContactHelper extends HelperBase {
     closeAlertWindow();
   }
 
+  public void editContact() {
+    click(By.xpath("/html/body/div/div[4]/form[2]/table/tbody/tr[3]/td[8]/a/img"));
+  }
+
+  public void submitContactModification() {
+    click(By.name("update"));
+  }
+
 }
