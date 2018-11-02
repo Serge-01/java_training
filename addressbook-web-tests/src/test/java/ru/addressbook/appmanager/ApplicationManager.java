@@ -23,13 +23,13 @@ public class ApplicationManager {
   }
 
   public void init() {
-    if (browser == BrowserType.FIREFOX) {
+    if (browser.equals(BrowserType.FIREFOX)) {
       System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "\\src\\test\\resources\\geckodriver.exe");
       wd = new FirefoxDriver();
-    } else if (browser == BrowserType.CHROME) {
+    } else if (browser.equals(BrowserType.CHROME)) {
       System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\src\\test\\resources\\chromedriver.exe");
       wd = new ChromeDriver();
-    } else if (browser == BrowserType.EDGE) {
+    } else if (browser.equals(BrowserType.EDGE)) {
       System.setProperty("webdriver.edge.driver", System.getProperty("user.dir") + "\\src\\test\\resources\\MicrosoftWebDriver.exe");
       wd = new EdgeDriver();
     }
