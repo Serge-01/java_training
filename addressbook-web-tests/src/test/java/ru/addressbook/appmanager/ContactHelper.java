@@ -44,11 +44,27 @@ public class ContactHelper extends HelperBase {
   }
 
   public void editContact() {
-    click(By.xpath("/html/body/div/div[4]/form[2]/table/tbody/tr[3]/td[8]/a/img"));
+    click(By.xpath("//table/tbody/tr[2]/td[8]"));
+    ///html/body/div/div[4]/form[2]/table/tbody/tr[2]/td[8]/a/img
   }
 
   public void submitContactModification() {
     click(By.name("update"));
+  }
+
+  public boolean isThereAContact() {
+    return isElementPresent(By.name("entry"));
+  }
+
+  public void createContact(ContactData contact, Boolean creation) {
+    goToAddNewContact();
+    fillContactForm(contact, creation);
+    submitContactCreation();
+    returnToHomePage();
+  }
+
+  private void returnToHomePage() {
+    click(By.linkText("home"));
   }
 
 }
